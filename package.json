@@ -1,0 +1,29 @@
+{
+  "name": "redrocketdown",
+  "version": "0.0.1",
+  "description": "simple site for lego models.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guyjin/redrocketdown.git"
+  },
+  "keywords": [
+    "lego",
+    "marsbase"
+  ],
+  "author": "Ben Vaughan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/guyjin/redrocketdown/issues"
+  },
+  "homepage": "https://github.com/guyjin/redrocketdown#readme",
+  "dependencies": {
+    "debug": "^2.2.0",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "http": "0.0.0"
+  }
+}
