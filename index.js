@@ -27,7 +27,7 @@ rrd.use(compileSass({
 console.log(root);
 // set default location for static files
 rrd.use(express.static(root));
-rrd.use(express.static('public'));
+// rrd.use(express.static('public'));
 
 
 
