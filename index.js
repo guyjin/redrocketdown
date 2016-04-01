@@ -1,7 +1,9 @@
-var express = require('express');
-var path = require('path');
-var ejs = require('ejs');
-var logger = require('debug');
+var express = require('express'),
+path = require('path'),
+ejs = require('ejs'),
+logger = require('debug'),
+compileSass = require('express-compile-sass'),
+root = process.cwd() + "/public";
 
 var home = require('./routes/index');
 var marsbase = require('./routes/marsbase');
@@ -14,9 +16,20 @@ var rrd = express();
 
 rrd.set('view engine', 'ejs');
 
-
-
+// Configure the compileSass component
+rrd.use(compileSass({
+    root: root,
+    sourceMap: true,
+    sourceComments: true,
+    watchFiles: true,
+    logToConsole: true
+}));
+console.log(root);
+// set default location for static files
+rrd.use(express.static(root));
 rrd.use(express.static('public'));
+
+
 
 rrd.use('/', home);
 rrd.use('/marsbase', marsbase);
