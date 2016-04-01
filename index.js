@@ -3,7 +3,7 @@ var path = require('path');
 var ejs = require('ejs');
 var logger = require('debug');
 
-var routes = require('./routes/index');
+var home = require('./routes/index');
 var marsbase = require('./routes/marsbase');
 
 
@@ -18,12 +18,12 @@ rrd.set('view engine', 'ejs');
 
 rrd.use(express.static('public'));
 
-rrd.use('/', routes);
+rrd.use('/', home);
 rrd.use('/marsbase', marsbase);
 
 rrd.use(function(req, res, next) {
     var err = new Error('Not Found');
-    err.status = 404
+    err.status = 404;
     next(err);
 });
 
@@ -52,4 +52,4 @@ module.exports = rrd;
 
 rrd.listen(8080, function() {
     console.log("RedRocketDown running on port 8080");
-})
+});
