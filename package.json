@@ -21,10 +21,12 @@
   },
   "homepage": "https://github.com/guyjin/redrocketdown#readme",
   "dependencies": {
+    "browser-sync": "^2.11.2",
     "debug": "^2.2.0",
     "ejs": "^2.4.1",
     "express": "^4.13.4",
     "express-compile-sass": "^3.0.4",
-    "http": "0.0.0"
+    "http": "0.0.0",
+    "normalize.css": "^4.0.0"
   }
 }

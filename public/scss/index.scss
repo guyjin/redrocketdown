@@ -1,3 +1,80 @@
+html {
+    height: 100%;
+}
 body {
-    font-family: 'Arvo', serif;
+    font-family: 'Open Sans', sans-serif;
+
+    &.home {
+        display: flex;
+
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+
+        .container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+        }
+
+        .masthead {
+            width: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+
+            .logo {
+                width: 80px;
+                height: auto;
+
+                margin-top: 40px;
+
+                img {
+                    width: 80px;
+                }
+
+                div {
+                    text-align: center;
+                    line-height: 0.8;
+                    padding: 0;
+                    margin: 0;
+                    text-transform: lowercase;
+                    font-weight: 300;
+
+                    &#red {
+                        font-size: 59px;
+                        margin-left: -5px;
+                    }
+
+                    &#rocket {
+                        font-size: 30px;
+                        margin-left: -3px;
+
+                    }
+
+                    &#down {
+                        font-size: 34px;
+                        margin-left: -2px;
+                    }
+                }
+            }
+            .tag {
+                text-align: right;
+                margin-top: .75em;
+                font-size: 1.2em;
+                font-weight: 400;
+                color: #bbb;
+                font-style: italic;
+            }
+        }
+
+        .main {
+            display: flex;
+            flex: 1;
+
+        }
+
+
+    }
 }
