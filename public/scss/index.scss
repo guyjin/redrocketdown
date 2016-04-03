@@ -75,12 +75,13 @@ body {
             flex-direction:column;
         }
 
+
+        $navHover: #ED2224;
         nav {
             display: flex;
             align-items: center;
             height: 80px;
             margin-top: 53px;
-            padding-left: 1em;
 
             a {
                 display: flex;
@@ -91,8 +92,18 @@ body {
                 padding: 0 1em;
                 transition: all .4s ease;
 
-                &:hover {
-                    background-color: #efefef;
+                &:nth-child(1):hover {
+                    background-color: $navHover;
+                    color: #fff;
+                }
+
+                &:nth-child(2):hover {
+                    background-color: lighten($navHover, 20%);
+                    color: #fff;
+                }
+
+                &:nth-child(3):hover {
+                    background-color: lighten($navHover, 40%);
                 }
             }
         }
