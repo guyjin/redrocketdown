@@ -1,9 +1,11 @@
 var express = require('express'),
+browserSync = require('browser-sync'),
 path = require('path'),
 ejs = require('ejs'),
 logger = require('debug'),
 compileSass = require('express-compile-sass'),
-root = process.cwd() + "/public";
+root = process.cwd() + "/public",
+port = process.env.PORT || 8080;
 
 var home = require('./routes/index');
 var marsbase = require('./routes/marsbase');
@@ -34,11 +36,11 @@ rrd.use(express.static(root));
 rrd.use('/', home);
 rrd.use('/marsbase', marsbase);
 
-rrd.use(function(req, res, next) {
-    var err = new Error('Not Found');
-    err.status = 404;
-    next(err);
-});
+// rrd.use(function(req, res, next) {
+//     var err = new Error('Not Found');
+//     err.status = 404;
+//     next(err);
+// });
 
 // // dev error handler will show stacktrace
 // if(rrd.get('env') === 'development') {
@@ -65,4 +67,8 @@ module.exports = rrd;
 
 rrd.listen(8080, function() {
     console.log("RedRocketDown running on port 8080");
+    browserSync({
+        proxy: 'localhost:' + port,
+        files: ['public/**/*.{js,scss}', 'views/**/*.ejs']
+    });
 });
