@@ -8,21 +8,18 @@
         <% include head.ejs %>
     </head>
     <body class='<%= pageClass %>'>
-        <div class="container">
-            <div class="masthead">
-                <div class="logo">
-                    <img src="img/logo.svg" alt="" />
-                    <div id="red">Red</div>
-                    <div id="rocket">Rocket</div>
-                    <div id="down">Down</div>
+        <div class="logo">
+            <img src="img/logo.svg" alt="" />
+            <div class="messaging">
+                <div class="greeting">
+                    hello.
                 </div>
-                <div class="tag">
-                    fictional LEGO<br/>
-                    for a fictional world
+                <div class="nav">
+                    <ul>
+                        <li><a href="/work">work</a></li>
+                        <li><a href="/about">about</a></li>
+                    </ul>
                 </div>
-            </div>
-            <div class="main">
-                <% include nav.ejs %>
             </div>
         </div>
     </body>

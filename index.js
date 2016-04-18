@@ -26,7 +26,6 @@ rrd.use(compileSass({
     watchFiles: true,
     logToConsole: true
 }));
-console.log(root);
 // set default location for static files
 rrd.use(express.static(root));
 // rrd.use(express.static('public'));
@@ -35,33 +34,6 @@ rrd.use(express.static(root));
 
 rrd.use('/', home);
 rrd.use('/marsbase', marsbase);
-
-// rrd.use(function(req, res, next) {
-//     var err = new Error('Not Found');
-//     err.status = 404;
-//     next(err);
-// });
-
-// // dev error handler will show stacktrace
-// if(rrd.get('env') === 'development') {
-//     rrd.use(function(err, req, res, next) {
-//         res.status(err.status || 500);
-//         res.render('error', {
-//             message: err.message,
-//             error: err
-//         });
-//     });
-// }
-//
-// // prod error handler
-// // no stacktrace
-// rrd.use(function(err, req, res, next) {
-//     res.status(err.status || 500);
-//     res.render('error', {
-//         message: err.message,
-//         error: {}
-//     });
-// });
 
 module.exports = rrd;
 
