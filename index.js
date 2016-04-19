@@ -9,6 +9,7 @@ port = process.env.PORT || 8080;
 
 var home = require('./routes/index');
 var marsbase = require('./routes/marsbase');
+var about = require('./routes/about');
 
 
 var rrd = express();
@@ -34,6 +35,7 @@ rrd.use(express.static(root));
 
 rrd.use('/', home);
 rrd.use('/marsbase', marsbase);
+rrd.use('/about', about);
 
 module.exports = rrd;
 
